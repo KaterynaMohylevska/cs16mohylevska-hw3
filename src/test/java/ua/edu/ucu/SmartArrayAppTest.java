@@ -1,6 +1,10 @@
 package ua.edu.ucu;
 
 import org.junit.Test;
+import ua.edu.ucu.smartarr.BaseArray;
+import ua.edu.ucu.smartarr.DistinctDecorator;
+import ua.edu.ucu.smartarr.SmartArray;
+
 import static org.junit.Assert.*;
 
 /**
@@ -18,6 +22,21 @@ public class SmartArrayAppTest {
         Integer[] expectedRes = {2, 4, 6};
         
         assertArrayEquals(expectedRes, res);        
+    }
+
+    @Test
+    public void testDecorator() {
+        Integer[] integers = {-1, 2, 0, 1, -5, 3, 2};
+        Integer[] expectedRes = {-1, 2, 0, 1, -5, 3};
+
+        SmartArray sa = new BaseArray(integers);
+
+        Object[] res = new DistinctDecorator(sa).toArray(); // Result: [-1, 2, 0, 1, -5, 3]
+//        sa = new FilterDecorator(sa, pr); // Result: [2, 1, 3];
+        //      sa = new SortDecorator(sa, cmp); // Result: [1, 2, 3]
+        //    sa = new MapDecorator(sa, func); // Result: [2, 4, 6]
+
+        assertArrayEquals(expectedRes, res);
     }
 
     @Test

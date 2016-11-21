@@ -13,11 +13,6 @@ public class BaseArray implements SmartArray{
     }
 
     @Override
-    public String operationDescription() {
-        return "Smart array";
-    }
-
-    @Override
     public int size() {
         return this.arr.length;
     }

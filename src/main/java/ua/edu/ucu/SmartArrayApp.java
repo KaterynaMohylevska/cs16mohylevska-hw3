@@ -35,10 +35,10 @@ public class SmartArrayApp {
         // Input: [-1, 2, 0, 1, -5, 3, 2]
         SmartArray sa = new BaseArray(integers);
 
-        sa = new DistinctDecorator(sa);
-        sa = new FilterDecorator(sa, pr); // Result: [2, 1, 3];
-        sa = new SortDecorator(sa, cmp); // Result: [1, 2, 3]
-        sa = new MapDecorator(sa, func); // Result: [2, 4, 6]
+        sa = new DistinctDecorator(sa); // Result: [-1, 2, 0, 1, -5, 3]
+//        sa = new FilterDecorator(sa, pr); // Result: [2, 1, 3];
+  //      sa = new SortDecorator(sa, cmp); // Result: [1, 2, 3]
+    //    sa = new MapDecorator(sa, func); // Result: [2, 4, 6]
 
         // Alternative
 //        sa = new MapDecorator(
